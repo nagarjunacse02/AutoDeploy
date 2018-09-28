@@ -6,7 +6,8 @@ node{
     sh "mvn package"
   }
   stage('SonarQube Analysis') {
-    withSonarQubeEnv('sonar-6') { 
+    withSonarQubeEnv('sonar-6') {
     sh "mvn sonar:sonar"
+    }
   } 
 }
