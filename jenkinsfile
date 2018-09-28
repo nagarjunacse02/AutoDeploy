@@ -9,5 +9,11 @@ node{
     withSonarQubeEnv('sonar-6') {
     sh "mvn sonar:sonar"
     }
-  } 
+  }
+  stage('Deploy to Tomcat'){
+      
+      sshagent(['tomcat-dev']) {
+         sh 'scp -o StrictHostKeyChecking=no target/*.war root@10.199.0.255:/home/osgdev/apache7/apache-tomcat-7.0.82/webapps'
+      }
+  }
 }
