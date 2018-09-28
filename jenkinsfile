@@ -8,6 +8,5 @@ node{
   stage('SonarQube Analysis') {
      withSonarQubeEnv('sonar-6') { 
      sh "sonar:sonar"
-  }
-  
+  } 
 }
