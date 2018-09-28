@@ -3,6 +3,6 @@ node{
    git 'https://github.com/nagarjunacse02/AutoDeploy.git'
    }
   stage('Compile-Package'){
-    sh mvn package
+    sh "mvn package"
   }
 }
